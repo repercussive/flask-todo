@@ -9,9 +9,11 @@
 <body>
     <h1>Todo App</h1>
 
+    {% include "components/task-form.html" %}
+
     {% for task in tasks %}
     
-    <p>{{ task.title }}</p>
+    <p><b>{{ task.title }}</b></p>
     {% if task.is_complete %}
     <span>Complete</span>
     {% else %}
