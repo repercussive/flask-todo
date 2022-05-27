@@ -1,5 +1,4 @@
 from flask import url_for
-from application import db
 from application.models import Task
 from tests import TestBase
 
