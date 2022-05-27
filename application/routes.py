@@ -3,11 +3,11 @@ from application import app, db
 from application.models import Task
 from application.forms import NewTaskForm, EditTaskForm
 
-
 @app.route('/')
 def home():
   tasks = Task.query.all()
   tasks.reverse()
+  tasks.sort(key=lambda task: task.is_complete)
   form = NewTaskForm()
   return render_template('home.html', tasks=tasks, form=form, action='add')
 
