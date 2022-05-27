@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Task</title>
-</head>
+{% extends "base.html" %}
 
-<body>
-    <h1>Edit Task</h1>
+<!-- head -->
+{% block head %}
+<title>Edit Task</title>
+{% endblock %}
 
-    {% include "components/task-form.html" %}
-</body>
+<!-- body -->
+{% block body %}
 
-</html>
+<h1>Edit Task</h1>
+{% include "components/task-form.html" %} 
+
+{% endblock %}

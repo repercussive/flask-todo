@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Flask Todo App</title>
-  </head>
+{% extends "base.html" %}
 
-  <body>
-    <h1>Todo App</h1>
-    <br />
-    {% include "components/task-form.html" %}
-    <br />
-    <!-- tasks -->
-    {% for task in tasks %} {% include "components/task.html" %} {% endfor %}
-  </body>
-</html>
+<!-- head -->
+{% block head %}
+<title>Flask Todo App</title>
+{% endblock %}
+
+<!-- body -->
+{% block body %}
+
+<h1>Todo App</h1>
+<br />
+{% include "components/task-form.html" %}
+<br />
+<!-- tasks -->
+{% for task in tasks %} {% include "components/task.html" %} {% endfor %} 
+
+{% endblock %}
