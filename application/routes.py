@@ -7,6 +7,7 @@ from application.forms import NewTaskForm, EditTaskForm
 @app.route('/')
 def home():
   tasks = Task.query.all()
+  tasks.reverse()
   form = NewTaskForm()
   return render_template('home.html', tasks=tasks, form=form, action='add')
 
