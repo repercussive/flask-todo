@@ -1,7 +1,7 @@
 <form class="task-form" action="/{{action}}" method="POST">
   {{ form.hidden_tag() }}
   {{ form.title.label }} {{ form.title }}
-  {{ form.submit }}
+  {{ form.submit(class_='accent-button') }}
 </form>
 
 <style>
@@ -19,15 +19,5 @@
     flex-grow: 1;
     border-radius: 3px;
     border: solid 1px #cecece;
-  }
-
-  .task-form input[type=submit] {
-    background-color: #7593a1;
-    border-color: #677c86;
-    color: white !important;
-  }
-
-  .task-form input[type=submit]:hover {
-    background-color: #6e848f;
   }
 </style>

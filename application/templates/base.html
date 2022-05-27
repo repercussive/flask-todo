@@ -11,6 +11,11 @@
 </html>
 
 <style>
+  :root {
+    --color-button-accent-a: #7593a1;
+    --color-button-accent-b: #677c86;
+  }
+
   html,
   body {
     margin: 0;
@@ -48,5 +53,15 @@
     margin: auto;
     margin-top: 1rem;
     max-width: 30rem;
+  }
+
+  .accent-button {
+    background-color: var(--color-button-accent-a) !important;
+    border-color: var(--color-button-accent-b) !important;
+    color: white !important;
+  }
+
+  .accent-button:hover {
+    background-color: #677c86 !important;
   }
 </style>

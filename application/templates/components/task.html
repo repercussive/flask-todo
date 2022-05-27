@@ -5,7 +5,7 @@
 
   <div class="buttons-wrapper">
     <form action="/toggle/{{task.id}}" method="POST">
-      <button class="button">
+      <button class="button {{'' if task.is_complete else 'accent-button'}}">
         {{ "Mark as incomplete" if task.is_complete else "Mark as complete" }}
       </button>
     </form>
