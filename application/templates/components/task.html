@@ -10,10 +10,10 @@
       </button>
     </form>
 
-    <a href="/edit/{{task.id}}" class="button" role="button">Edit</a>
+    <a href="/edit/{{task.id}}" class="button" role="button">✏️</a>
 
     <form action="/delete/{{task.id}}" method="POST">
-      <button class="button">Delete</button>
+      <button class="button">🗑️</button>
     </form>
   </div>
 </div>
@@ -39,5 +39,9 @@
 
   .buttons-wrapper *:first-child {
     margin-right: auto;
+  }
+
+  .buttons-wrapper form button {
+    height: 100%;
   }
 </style>
