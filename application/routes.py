@@ -1,13 +1,13 @@
 from flask import render_template, request, redirect, url_for
 from application import app, db
 from application.models import Task
-from application.forms import TaskForm
+from application.forms import NewTaskForm, EditTaskForm
 
 
 @app.route('/')
 def home():
   tasks = Task.query.all()
-  form = TaskForm()
+  form = NewTaskForm()
   return render_template('home.html', tasks=tasks, form=form, action='add')
 
 
@@ -31,7 +31,7 @@ def toggle(id):
 def edit(id):
   task = Task.query.get(id)
   title = task.title
-  form = TaskForm(title=title)
+  form = EditTaskForm(title=title)
 
   if form.validate_on_submit():
     task.title = form.title.data
