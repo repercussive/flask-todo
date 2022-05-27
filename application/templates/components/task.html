@@ -1,0 +1,29 @@
+<div class="task {{'complete' if task.is_complete else ''}}">
+  <p class="title">
+    <b>{{ task.title }}</b>
+  </p>
+
+  <a href="/edit/{{task.id}}">edit</a>
+  <br />
+
+  <form action="/toggle/{{task.id}}" method="POST">
+    <button>
+      {{ "Mark as incomplete" if task.is_complete else "Mark as complete" }}
+    </button>
+  </form>
+</div>
+
+<style>
+  .task {
+    margin-bottom: 2rem;
+  }
+
+  .task .title {
+    margin: 0;
+  }
+
+  .task.complete .title {
+    text-decoration: line-through;
+    color: #9d9d9d;
+  }
+</style>

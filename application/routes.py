@@ -19,6 +19,14 @@ def add():
   return redirect(url_for('home'))
 
 
+@app.route('/toggle/<int:id>', methods=['POST'])
+def toggle(id):
+  task = Task.query.get(id)
+  task.is_complete = not task.is_complete
+  db.session.commit()
+  return redirect(url_for('home'))
+
+
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
   task = Task.query.get(id)

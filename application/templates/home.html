@@ -1,28 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Flask Todo App</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Todo App</h1>
-
-    {% include "components/task-form.html" %}
-
-    {% for task in tasks %}
-    
-    <p><b>{{ task.title }}</b></p>
-    <a href="/edit/{{task.id}}">edit</a>
     <br />
-    {% if task.is_complete %}
-    <span>Complete</span>
-    {% else %}
-    <span>Not Complete</span>
-    {% endif %}
-
-    {% endfor %}
-</body>
-
+    {% include "components/task-form.html" %}
+    <br />
+    <!-- tasks -->
+    {% for task in tasks %} {% include "components/task.html" %} {% endfor %}
+  </body>
 </html>
