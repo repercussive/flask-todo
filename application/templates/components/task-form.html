@@ -1,5 +1,33 @@
-<form action="/{{action}}" method="POST">
+<form class="task-form" action="/{{action}}" method="POST">
   {{ form.hidden_tag() }}
   {{ form.title.label }} {{ form.title }}
   {{ form.submit }}
 </form>
+
+<style>
+  .task-form {
+    display: flex;
+  }
+
+  .task-form label {
+    align-self: center;
+  }
+
+  .task-form input[type=text] {
+    margin: 0 0.5rem;
+    padding: 0.25rem;
+    flex-grow: 1;
+    border-radius: 3px;
+    border: solid 1px #cecece;
+  }
+
+  .task-form input[type=submit] {
+    background-color: #7593a1;
+    border-color: #677c86;
+    color: white !important;
+  }
+
+  .task-form input[type=submit]:hover {
+    background-color: #6e848f;
+  }
+</style>

@@ -3,27 +3,32 @@
     <b>{{ task.title }}</b>
   </p>
 
-  <a href="/edit/{{task.id}}">edit</a>
-  <br />
-
-  <form action="/toggle/{{task.id}}" method="POST">
-    <button>
-      {{ "Mark as incomplete" if task.is_complete else "Mark as complete" }}
-    </button>
-  </form>
+  <div class="buttons-wrapper">
+    <form action="/toggle/{{task.id}}" method="POST">
+      <button>
+        {{ "Mark as incomplete" if task.is_complete else "Mark as complete" }}
+      </button>
+    </form>
+    <a href="/edit/{{task.id}}" class="button">Edit</a>
+  </div>
 </div>
 
 <style>
   .task {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .task .title {
-    margin: 0;
+    margin-bottom: 0.5rem;
   }
 
   .task.complete .title {
     text-decoration: line-through;
     color: #9d9d9d;
+  }
+
+  .buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
   }
 </style>
