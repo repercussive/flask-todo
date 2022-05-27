@@ -4,7 +4,7 @@ from tests import TestBase
 
 
 class TestAdd(TestBase):
-  # adding a task via POST works
+  # (add route, POST) adding a task via POST works
   def test_add_task(self):
     self.client.post(
         url_for('add'),

@@ -5,7 +5,7 @@ from tests import TestBase
 
 
 class TestHome(TestBase):
-  # (home route, GET) gives a valid response on GET
+  # (home route, GET) gives a valid response
   def test_get(self):
     response = self.client.get(url_for('home'))
     assert response.status_code == 200

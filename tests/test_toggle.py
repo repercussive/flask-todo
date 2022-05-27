@@ -5,7 +5,7 @@ from tests import TestBase
 
 
 class TestToggle(TestBase):
-  # toggling a task between complete/incomplete works
+  # (toggle route, POST) toggling a task between complete/incomplete works
   def test_toggle_complete(self):
     # add test task
     test_task = Task(title='Test task')
