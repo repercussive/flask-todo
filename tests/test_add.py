@@ -8,7 +8,7 @@ class TestAdd(TestBase):
   def test_add_task(self):
     self.client.post(
         url_for('add'),
-        data=dict(title='New task')
+        data={'title': 'New task'}
     )
     new_task = Task.query.first()
     assert new_task.title == 'New task'
