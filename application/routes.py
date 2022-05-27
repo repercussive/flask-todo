@@ -40,3 +40,9 @@ def edit(id):
     return redirect(url_for('home'))
 
   return render_template('edit.html', title=title, form=form, action=f'edit/{id}')
+
+@app.route('/delete/<int:id>', methods=['POST'])
+def delete(id):
+  db.session.delete(Task.query.get(id))
+  db.session.commit()
+  return redirect(url_for('home'))

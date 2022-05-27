@@ -5,11 +5,16 @@
 
   <div class="buttons-wrapper">
     <form action="/toggle/{{task.id}}" method="POST">
-      <button>
+      <button class="button">
         {{ "Mark as incomplete" if task.is_complete else "Mark as complete" }}
       </button>
     </form>
-    <a href="/edit/{{task.id}}" class="button">Edit</a>
+
+    <a href="/edit/{{task.id}}" class="button" role="button">Edit</a>
+
+    <form action="/delete/{{task.id}}" method="POST">
+      <button class="button">Delete</button>
+    </form>
   </div>
 </div>
 
@@ -29,6 +34,10 @@
 
   .buttons-wrapper {
     display: flex;
-    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .buttons-wrapper *:first-child {
+    margin-right: auto;
   }
 </style>
