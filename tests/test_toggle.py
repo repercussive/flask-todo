@@ -13,9 +13,9 @@ class TestToggle(TestBase):
     db.session.commit()
 
     # toggle once to set is_complete to True
-    self.client.post(url_for(f'toggle', id=test_task.id))
+    self.client.post(url_for('toggle', id=test_task.id))
     assert Task.query.get(test_task.id).is_complete == True
 
     # toggle back to False
-    self.client.post(url_for(f'toggle', id=test_task.id))
+    self.client.post(url_for('toggle', id=test_task.id))
     assert Task.query.get(test_task.id).is_complete == False

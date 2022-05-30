@@ -13,5 +13,5 @@ class TestDelete(TestBase):
     db.session.commit()
 
     # after the delete request is sent, the task no longer exists
-    self.client.post(url_for(f'delete', id=test_task.id))
+    self.client.post(url_for('delete', id=test_task.id))
     assert Task.query.get(test_task.id) is None

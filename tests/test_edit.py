@@ -19,7 +19,7 @@ class TestEdit(TestBase):
 
     # send request to change title
     self.client.post(
-        url_for(f'edit', id=test_task.id),
+        url_for('edit', id=test_task.id),
         data={'title': 'A cool new title'}
     )
 
